@@ -1,0 +1,1 @@
+# Explain the script’s logic, focusing on how it connects to the MySQL database and ensures a unique filename for each backup.
