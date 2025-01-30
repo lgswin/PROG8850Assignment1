@@ -1,1 +1,1 @@
-CREATE DATABASE assignment1;
+CREATE DATABASE IF NOT EXISTS assignment1;

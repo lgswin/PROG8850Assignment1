@@ -1,18 +1,31 @@
 # PROG8850Template
-environment with mysql, python, node and docker
-
-TLDR;
+environment with mysql with docker container
 
 ```bash
-pip install -r requirements.txt
-sudo service mysql start
+docker compose up -d
+python create_database.py
+```
+
+To check running container
+```bash
+docker ps
 ```
 
 To access database:
 
 ```bash
-sudo mysql -u root
+docker exec -it mysql_container mysql -u root -p
 ```
+
+To access database:
+
+```bash
+python backup_script.py
+```
+
+you can see backups in the backups folder.
+"assignment1_backup_20250130_101949.sql"
+
 
 1.1) Explain database automation and its significance in modern data management. Highlight
 the role of automation in handling large volumes of data efficiently and securely.
