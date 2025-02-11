@@ -17,7 +17,7 @@ To access database:
 docker exec -it mysql_container mysql -u root -p
 ```
 
-To access database:
+To backup database:
 
 ```bash
 python backup_script.py

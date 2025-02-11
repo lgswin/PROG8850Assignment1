@@ -19,5 +19,5 @@ try:
 
     print("All SQL scripts executed successfully!")
 
-except subprocess.CalledProcessError as e:
+except subprocess.CalledProcessError as e:  
     print(f"Error executing SQL scripts: {e}")

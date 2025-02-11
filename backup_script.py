@@ -20,16 +20,16 @@ if not os.path.exists(backup_dir):
     os.makedirs(backup_dir)
 
 try:
-    # 1️⃣ Create a database backup inside the Docker container
+    # Create a database backup inside the Docker container
     print(f"🚀 Creating backup inside Docker container: {backup_filename}")
     backup_command = f"docker exec {container_name} sh -c 'mysqldump -u root -p\"rootpassword\" {db_name} > {container_backup_path}'"
     subprocess.run(backup_command, shell=True, check=True)
 
-    # 2️⃣ Copy the backup file from the container to the local machine
+    # Copy the backup file from the container to the local machine
     print("📂 Copying backup file to the local machine...")
     subprocess.run(f"docker cp {container_name}:{container_backup_path} {local_backup_path}", shell=True, check=True)
 
-    print(f"✅ Backup completed successfully! File saved at: {local_backup_path}")
+    print(f"Backup completed successfully! File saved at: {local_backup_path}")
 
 except subprocess.CalledProcessError as e:
-    print(f"❌ Error during database backup: {e}")
+    print(f"Error during database backup: {e}")
